@@ -1,0 +1,24 @@
+<div>
+    <div class="header">
+        <h1>Список книг</h1>
+        <button matButton="filled" (click)="openDialog()">Добавить книгу</button>
+    </div>
+    <mat-list role="list" class="lists">
+        <mat-card *ngFor="let item of bookList$ | async" class="example-card" appearance="outlined">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{item.name}}</mat-card-title>
+            </mat-card-header>
+            <img class="logo" mat-card-image [src]="item.logo">
+            <mat-card-content>
+                <p>
+                    {{item.description}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions class="jcsb">
+                <p><mat-slide-toggle (change)="addReadBooks($event.checked, item.id)" [checked]="item.readIt" labelPosition="before">Прочитано</mat-slide-toggle></p>
+                <button matButton="filled" (click)="deleteBook(item.id)">Удалить</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-list>
+</div>

@@ -1,0 +1,31 @@
+.header {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.lists {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
+
+    .logo {
+        width: 350px;
+        height: 200px;
+        object-fit: contain;
+    }
+
+    .example-card {
+        margin-bottom: 10px;
+        width: 350px;
+    }
+}
+
+mat-card-actions {
+    justify-content: space-between;
+}
